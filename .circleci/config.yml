@@ -11,6 +11,6 @@ jobs:
     steps:
       - checkout
       - run:
-          name: ls
-          command: |
-            ls -al
+        name: ls
+        command: |
+          ls -al
