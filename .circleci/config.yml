@@ -6,7 +6,7 @@ executors:
     working_directory: .git/
 
 jobs:
-  my-job:
+  build:
     executor: my-executor
     steps:
       - checkout
