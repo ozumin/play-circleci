@@ -3,7 +3,7 @@ executors:
   my-executor:
     docker:
       - image: circleci/ruby:2.5.1-node-browsers
-    working_directory: .git/
+    working_directory: ~/.git
 
 jobs:
   build:
