@@ -1,16 +1,26 @@
-version: 2.1
+version: 2.0
 executors:
-  my-executor:
-    docker:
-      - image: circleci/ruby:2.5.1-node-browsers
-    working_directory: ~/.git
+ my-executor:
+   docker:
+     - image: circleci/node:10-browsers
 
 jobs:
-  build:
-    executor: my-executor
-    steps:
-      - checkout
-      - run:
-        name: ls
-        command: |
-          ls -al
+ build:
+   # ビルド済みイメージ：https://circleci.com/docs/ja/2.0/circleci-images/
+   executor: my-executor
+   steps:
+     - checkout
+     - run:
+         name: 最初の一歩
+         command: |
+           echo 'Hello World!'
+           echo 'This is the delivery pipeline'
+     - run:
+         name: コードの取得
+         command: |
+           ls -al
+           echo '^^^That should look familiar^^^'
+     - run:
+         name: 独自コンテナで実行
+         command: |
+           node -v
